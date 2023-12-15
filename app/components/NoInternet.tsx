@@ -3,24 +3,28 @@
  */
 
 import React from 'react';
-import {StyleSheet, Text, View, Dimensions} from 'react-native';
-import {useNetInfo} from '@react-native-community/netinfo';
+import { StyleSheet, Text, View, Dimensions } from 'react-native';
+import { useNetInfo } from '@react-native-community/netinfo';
 
-import {useTheme} from '../theme/useTheme';
+import { useTheme } from '../theme/useTheme';
 import Layout from './Layout';
 
-const {width} = Dimensions.get('window');
+const { width } = Dimensions.get('window');
 
 // Full Screen component to show No internet message
 const NoInternet = () => {
   const netInfo = useNetInfo();
-  const {theme} = useTheme();
+  const { theme } = useTheme();
   if (!netInfo.isConnected) {
     return (
       <Layout style={styles.layout}>
         <View style={styles.content}>
-          <Text style={[styles.title, {color: theme.color}]}>No Internet</Text>
-          <Text style={{color: theme.color}}>Please check your connection</Text>
+          <Text style={[styles.title, { color: theme.color }]}>
+            No Internet
+          </Text>
+          <Text style={{ color: theme.color }}>
+            Please check your connection
+          </Text>
         </View>
       </Layout>
     );
@@ -65,5 +69,5 @@ const styles = StyleSheet.create({
     bottom: 0,
     zIndex: 10,
   },
-  offlineText: {fontSize: 11, color: '#fff'},
+  offlineText: { fontSize: 11, color: '#fff' },
 });

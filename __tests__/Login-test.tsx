@@ -1,7 +1,7 @@
 import 'react-native';
 import React from 'react';
 // import {render} from '@testing-library/react-native';
-import {render} from '../app/utils/test-utils';
+import { render } from '../app/utils/test-utils';
 
 import Login from '../app/screens/auth/Login';
 

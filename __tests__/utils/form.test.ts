@@ -1,4 +1,4 @@
-import {transformToFormikErrors} from '../../app/utils/form';
+import { transformToFormikErrors } from '../../app/utils/form';
 
 let inputErrors = [
   {

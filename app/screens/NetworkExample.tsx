@@ -1,13 +1,13 @@
 import React from 'react';
-import {ScrollView, StyleSheet, Text, View} from 'react-native';
-import {useSelector, useDispatch} from 'react-redux';
+import { ScrollView, StyleSheet, Text, View } from 'react-native';
+import { useSelector, useDispatch } from 'react-redux';
 
-import {useTheme} from '../theme/useTheme';
+import { useTheme } from '../theme/useTheme';
 import Layout from '../components/Layout';
 import NetwokExampleCard from '../components/NetwokExampleCard';
 
-import {RootState, AppDispatch} from '../store/store';
-import {fetchUser, createUser} from '../store/dummyNetwork';
+import { RootState, AppDispatch } from '../store/store';
+import { fetchUser, createUser } from '../store/dummyNetwork';
 
 const dummyData = {
   name: 'Harry',
@@ -15,7 +15,7 @@ const dummyData = {
 };
 
 export default function NetworkExample() {
-  const {theme} = useTheme();
+  const { theme } = useTheme();
   const dispatch = useDispatch<AppDispatch>();
 
   const user = useSelector((state: RootState) => state.dummyNetwork.data);
@@ -44,19 +44,19 @@ export default function NetworkExample() {
           title="GET"
           loading={dataStatus === 'loading'}
           onPress={fetchData}>
-          <Text style={[styles.url, {color: theme.color}]}>
+          <Text style={[styles.url, { color: theme.color }]}>
             URL: https://jsonplaceholder.typicode.com/users/1
           </Text>
-          <Text style={[styles.url, {color: theme.color}]}>{dataStatus}</Text>
+          <Text style={[styles.url, { color: theme.color }]}>{dataStatus}</Text>
 
           {dataStatus === 'succeeded' ? (
             <>
-              <Text style={{color: theme.color}}>{user.name}</Text>
-              <Text style={{color: theme.color}}>{user.email}</Text>
+              <Text style={{ color: theme.color }}>{user.name}</Text>
+              <Text style={{ color: theme.color }}>{user.email}</Text>
             </>
           ) : (
             <>
-              <Text style={[styles.url, {color: theme.color}]}>
+              <Text style={[styles.url, { color: theme.color }]}>
                 Press fire to fetch the data
               </Text>
             </>
@@ -68,25 +68,27 @@ export default function NetworkExample() {
           title="POST"
           loading={newUserStatus === 'loading'}
           onPress={postData}>
-          <Text style={[styles.url, {color: theme.color}]}>
+          <Text style={[styles.url, { color: theme.color }]}>
             URL: https://jsonplaceholder.typicode.com/users
           </Text>
-          <Text style={[styles.url, {color: theme.color}]}>
+          <Text style={[styles.url, { color: theme.color }]}>
             {newUserStatus}
           </Text>
 
           <View style={styles.row}>
             <View style={styles.grid}>
-              <Text style={[styles.code, {color: theme.color}]}>Payload:</Text>
-              <Text style={[styles.code, {color: theme.color}]}>
+              <Text style={[styles.code, { color: theme.color }]}>
+                Payload:
+              </Text>
+              <Text style={[styles.code, { color: theme.color }]}>
                 {JSON.stringify(dummyData, null, 2)}
               </Text>
             </View>
             <View style={styles.grid}>
-              <Text style={[styles.code, {color: theme.color}]}>
+              <Text style={[styles.code, { color: theme.color }]}>
                 From network:
               </Text>
-              <Text style={[styles.code, {color: theme.color}]}>
+              <Text style={[styles.code, { color: theme.color }]}>
                 {JSON.stringify(newUser, null, 2)}
               </Text>
             </View>

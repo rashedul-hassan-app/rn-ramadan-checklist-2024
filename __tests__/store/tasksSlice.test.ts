@@ -1,7 +1,7 @@
 import reducer from '../../app/store/tasksSlice';
 
 test('should return the initial state', () => {
-  expect(reducer(undefined, {type: undefined})).toEqual({
+  expect(reducer(undefined, { type: undefined })).toEqual({
     status: 'idle',
     entities: [
       {

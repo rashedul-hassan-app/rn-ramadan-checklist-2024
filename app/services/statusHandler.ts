@@ -1,8 +1,8 @@
 /**
  * Status Handler - For handling network responses
  */
-import {AxiosError} from 'axios';
-import {requestNewToken} from '../utils/token';
+import { AxiosError } from 'axios';
+import { requestNewToken } from '../utils/token';
 
 const statusHandler = (err: AxiosError) => {
   if (err.response) {

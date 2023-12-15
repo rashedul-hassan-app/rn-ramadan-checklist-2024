@@ -1,10 +1,10 @@
 import React from 'react';
-import {SafeAreaProvider} from 'react-native-safe-area-context';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 import ReduxProvider from './app/store';
-import {STORYBOOK_MODE} from '@env';
-import {ThemeProvider} from './app/theme/useTheme';
-import {NoInternetToast} from './app/components/NoInternet';
+import { STORYBOOK_MODE } from '@env';
+import { ThemeProvider } from './app/theme/useTheme';
+import { NoInternetToast } from './app/components/NoInternet';
 
 // Navigation
 import RootNavigation from './app/routes/RootNavigation';

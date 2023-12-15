@@ -1,18 +1,18 @@
-import React, {useState, useRef} from 'react';
-import {StyleSheet, FlatList, View, TextInput} from 'react-native';
+import React, { useState, useRef } from 'react';
+import { StyleSheet, FlatList, View, TextInput } from 'react-native';
 
-import {useSelector, useDispatch} from 'react-redux';
-import {taskAdded, taskToggled} from '../store/tasksSlice';
-import {RootState} from '../store/store';
-import {Task} from '../store/tasksSlice';
+import { useSelector, useDispatch } from 'react-redux';
+import { taskAdded, taskToggled } from '../store/tasksSlice';
+import { RootState } from '../store/store';
+import { Task } from '../store/tasksSlice';
 
-import {useTheme} from '../theme/useTheme';
+import { useTheme } from '../theme/useTheme';
 import Layout from '../components/Layout';
 import Card from '../components/Card';
 import ListItem from '../components/ListItem';
 
 const Tasks = () => {
-  const {theme} = useTheme();
+  const { theme } = useTheme();
 
   const inputRef = useRef<TextInput>(null);
 
@@ -25,7 +25,7 @@ const Tasks = () => {
   const addNewTask = () => {
     let temp = text.trim();
     if (temp !== '') {
-      dispatch(taskAdded({id: Date.now(), title: temp, done: false}));
+      dispatch(taskAdded({ id: Date.now(), title: temp, done: false }));
     }
     inputRef.current?.clear();
   };
@@ -34,7 +34,7 @@ const Tasks = () => {
     dispatch(taskToggled(id));
   };
 
-  const renderItem = ({item, index}: {item: Task; index: number}) => (
+  const renderItem = ({ item, index }: { item: Task; index: number }) => (
     <ListItem item={item} index={index} onPress={onCheckedHandler} />
   );
 
@@ -52,7 +52,7 @@ const Tasks = () => {
       {/* Tasks Listing ends here */}
 
       <Card
-        style={[styles.inputCard, {borderTopColor: theme?.cardBorderColor}]}>
+        style={[styles.inputCard, { borderTopColor: theme?.cardBorderColor }]}>
         {/* TextInput and InputButton starts here */}
         <View style={styles.inputBtnRow}>
           <View style={styles.inputBtnWrp}>

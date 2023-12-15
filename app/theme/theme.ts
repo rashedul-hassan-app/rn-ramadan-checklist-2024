@@ -73,4 +73,4 @@ const themes: themesType = {
   },
 };
 
-export {spacing, typeSizes, themes};
+export { spacing, typeSizes, themes };

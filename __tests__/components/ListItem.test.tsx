@@ -1,6 +1,6 @@
 import 'react-native';
 import React from 'react';
-import {render, fireEvent} from '../../app/utils/test-utils';
+import { render, fireEvent } from '../../app/utils/test-utils';
 
 import ListItem from '../../app/components/ListItem';
 
@@ -17,7 +17,7 @@ describe('ListItem', () => {
   });
 
   it('should fire press', () => {
-    let {getByText} = render(
+    let { getByText } = render(
       <ListItem item={mockdata} onPress={onPressMock} />,
       {},
     );

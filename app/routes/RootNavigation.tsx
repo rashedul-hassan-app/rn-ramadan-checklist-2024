@@ -3,22 +3,22 @@
  * If you don't like it, feel free to replace with your own setup.
  * Uncomment commented lines from return() of RootNavigation to wire Login flow
  */
-import React, {useEffect} from 'react';
-import {ColorValue} from 'react-native';
+import React, { useEffect } from 'react';
+import { ColorValue } from 'react-native';
 
-import {NavigationContainer} from '@react-navigation/native';
+import { NavigationContainer } from '@react-navigation/native';
 // import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/Ionicons';
-import {useDispatch} from 'react-redux';
+import { useDispatch } from 'react-redux';
 // import {useSelector, useDispatch} from 'react-redux';
 
 // Hook for theme change (Light/Dark Mode)
-import {useTheme} from '../theme/useTheme';
+import { useTheme } from '../theme/useTheme';
 // Get Value from Keyring (Encrypted token)
-import {getSecureValue} from '../utils/keyChain';
+import { getSecureValue } from '../utils/keyChain';
 // Redux slice for updating Access Token to store
-import {updateToken} from '../store/userSlice';
+import { updateToken } from '../store/userSlice';
 
 // import {RootState} from '../store/store';
 
@@ -29,13 +29,13 @@ import NetworkExample from '../screens/NetworkExample';
 import Settings from '../screens/Settings';
 
 // Icons for Bottom Tab Navigation
-const homeIcon = ({color}: {color: ColorValue | number}) => (
+const homeIcon = ({ color }: { color: ColorValue | number }) => (
   <Icon name="list-sharp" size={30} color={color} />
 );
-const networkIcon = ({color}: {color: ColorValue | number}) => (
+const networkIcon = ({ color }: { color: ColorValue | number }) => (
   <Icon name="wifi-sharp" size={24} color={color} />
 );
-const settingsIcon = ({color}: {color: ColorValue | number}) => (
+const settingsIcon = ({ color }: { color: ColorValue | number }) => (
   <Icon name="settings-sharp" size={24} color={color} />
 );
 
@@ -44,7 +44,7 @@ const settingsIcon = ({color}: {color: ColorValue | number}) => (
 const Tab = createBottomTabNavigator();
 
 export default function RootNavigation() {
-  const {theme} = useTheme();
+  const { theme } = useTheme();
   const dispatch = useDispatch();
   // const user = useSelector((state: RootState) => state.user);
 
@@ -53,7 +53,7 @@ export default function RootNavigation() {
     async function checkIsLogined() {
       try {
         let temp = await getSecureValue('token');
-        dispatch(updateToken({token: temp}));
+        dispatch(updateToken({ token: temp }));
       } catch (e) {}
     }
     checkIsLogined();
@@ -70,7 +70,7 @@ export default function RootNavigation() {
           },
           tabBarInactiveTintColor: theme.color,
           tabBarActiveTintColor: theme.primary,
-          headerStyle: {backgroundColor: theme.cardBg, height: 50},
+          headerStyle: { backgroundColor: theme.cardBg, height: 50 },
           headerTitleAlign: 'center',
           headerTitleStyle: {
             color: theme.primary,

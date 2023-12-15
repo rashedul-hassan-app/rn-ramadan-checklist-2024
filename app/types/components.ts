@@ -1,5 +1,5 @@
-import {ReactNode} from 'react';
-import {ViewStyle, StyleProp, TextInputProps} from 'react-native';
+import { ReactNode } from 'react';
+import { ViewStyle, StyleProp, TextInputProps } from 'react-native';
 
 // Layout
 export interface LayoutPropsType {

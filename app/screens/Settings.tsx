@@ -1,11 +1,18 @@
 import React from 'react';
-import {StyleSheet, ScrollView, View, Text, Switch, Image} from 'react-native';
+import {
+  StyleSheet,
+  ScrollView,
+  View,
+  Text,
+  Switch,
+  Image,
+} from 'react-native';
 
-import {useDispatch} from 'react-redux';
-import {clearUser} from '../store/userSlice';
-import {removeSecureValue} from '../utils/keyChain';
+import { useDispatch } from 'react-redux';
+import { clearUser } from '../store/userSlice';
+import { removeSecureValue } from '../utils/keyChain';
 
-import {useTheme} from '../theme/useTheme';
+import { useTheme } from '../theme/useTheme';
 import Layout from '../components/Layout';
 import Card from '../components/Card';
 import MenuItem from '../components/MenuItem';
@@ -13,7 +20,7 @@ import MenuItem from '../components/MenuItem';
 const avatar = require('../assets/images/avatar.png');
 
 const Settings = () => {
-  const {theme, toggleTheme} = useTheme();
+  const { theme, toggleTheme } = useTheme();
   const dispatch = useDispatch();
 
   const handleLogout = () => {
@@ -27,13 +34,13 @@ const Settings = () => {
   return (
     <Layout>
       <ScrollView
-        style={[styles.contentContainer, {backgroundColor: theme.layoutBg}]}>
-        <Card style={{backgroundColor: theme.cardBg}}>
+        style={[styles.contentContainer, { backgroundColor: theme.layoutBg }]}>
+        <Card style={{ backgroundColor: theme.cardBg }}>
           <View style={styles.avatarRow}>
             <Image source={avatar} style={styles.avatar} />
             <View>
-              <Text style={{color: theme.color}}>Hermione Granger</Text>
-              <Text style={{color: theme.color}}>u/hermione</Text>
+              <Text style={{ color: theme.color }}>Hermione Granger</Text>
+              <Text style={{ color: theme.color }}>u/hermione</Text>
             </View>
           </View>
           <>
@@ -50,7 +57,7 @@ const Settings = () => {
                 <Switch
                   value={theme.name === 'dark'}
                   onValueChange={value => toggleTheme(value)}
-                  trackColor={{false: '#767577', true: '#81b0ff'}}
+                  trackColor={{ false: '#767577', true: '#81b0ff' }}
                   thumbColor={theme.name === 'dark' ? '#f5dd4b' : '#f4f3f4'}
                   ios_backgroundColor="#3e3e3e"
                 />

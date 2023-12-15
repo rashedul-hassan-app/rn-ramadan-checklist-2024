@@ -1,4 +1,4 @@
-import {createSlice} from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 
 export type Task = {
   id: string;
@@ -48,7 +48,7 @@ const tasksSlice = createSlice({
   },
 });
 
-export const {taskAdded, taskToggled, completedTasksCleared} =
+export const { taskAdded, taskToggled, completedTasksCleared } =
   tasksSlice.actions;
 
 export default tasksSlice.reducer;

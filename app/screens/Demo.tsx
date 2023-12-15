@@ -1,10 +1,10 @@
 import React from 'react';
-import {Text, View, Button} from 'react-native';
-import {useSelector} from 'react-redux';
+import { Text, View, Button } from 'react-native';
+import { useSelector } from 'react-redux';
 
-import {getNews} from '../services';
-import {requestNewToken} from '../utils/token';
-import {RootState} from '../store/store';
+import { getNews } from '../services';
+import { requestNewToken } from '../utils/token';
+import { RootState } from '../store/store';
 
 // const Base_URL = 'http://10.0.2.2:4001/';
 

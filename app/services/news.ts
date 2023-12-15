@@ -1,4 +1,4 @@
-import {routes, get} from './index';
+import { routes, get } from './index';
 
 export const getNews = () => {
   return get(`${routes.getNews}`);

@@ -1,6 +1,5 @@
-/* eslint-disable no-undef */
 import nock from 'nock';
-import {NativeModules} from 'react-native';
+import { NativeModules } from 'react-native';
 // import jest from 'jest-mock';
 
 nock.disableNetConnect();

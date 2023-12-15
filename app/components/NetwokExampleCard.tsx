@@ -7,8 +7,8 @@ import {
 } from 'react-native';
 import React from 'react';
 
-import {useTheme} from '../theme/useTheme';
-import {spacing} from '../theme/theme';
+import { useTheme } from '../theme/useTheme';
+import { spacing } from '../theme/theme';
 
 type NetworkExampleCardProps = {
   title: string;
@@ -23,7 +23,7 @@ const NetwokExampleCard = ({
   onPress = () => {},
   children,
 }: NetworkExampleCardProps) => {
-  const {theme} = useTheme();
+  const { theme } = useTheme();
 
   return (
     <View style={styles.card}>
@@ -36,11 +36,11 @@ const NetwokExampleCard = ({
             borderTopRightRadius: spacing.borderRadius,
           },
         ]}>
-        <Text style={[styles.cardTitle, {color: theme.color}]}>{title}</Text>
+        <Text style={[styles.cardTitle, { color: theme.color }]}>{title}</Text>
         <Pressable
-          style={({pressed}) => [
+          style={({ pressed }) => [
             styles.btnFire,
-            {backgroundColor: pressed ? theme.primary + '50' : theme.primary},
+            { backgroundColor: pressed ? theme.primary + '50' : theme.primary },
           ]}
           onPress={onPress}>
           {loading ? (
@@ -51,7 +51,7 @@ const NetwokExampleCard = ({
         </Pressable>
       </View>
 
-      <View style={[styles.cardBody, {backgroundColor: theme.cardBg + '60'}]}>
+      <View style={[styles.cardBody, { backgroundColor: theme.cardBg + '60' }]}>
         {children}
       </View>
     </View>

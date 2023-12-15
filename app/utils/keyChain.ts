@@ -4,11 +4,11 @@ export const setSecureValue = async (key, value) =>
   await Keychain.setGenericPassword(
     key /* <- can be a random string */,
     value,
-    {service: key},
+    { service: key },
   );
 
 export const getSecureValue = async key => {
-  const result = await Keychain.getGenericPassword({service: key});
+  const result = await Keychain.getGenericPassword({ service: key });
   if (result) {
     return result.password;
   }
@@ -16,4 +16,4 @@ export const getSecureValue = async key => {
 };
 
 export const removeSecureValue = async key =>
-  await Keychain.resetGenericPassword({service: key});
+  await Keychain.resetGenericPassword({ service: key });

@@ -1,7 +1,7 @@
-import {getSecureValue, setSecureValue} from './keyChain';
-import {login} from '../services/index';
-import {updateToken} from '../store/userSlice';
-import {store} from '../store/store';
+import { getSecureValue, setSecureValue } from './keyChain';
+import { login } from '../services/index';
+import { updateToken } from '../store/userSlice';
+import { store } from '../store/store';
 /**
  * Request ACCESS TOKEN using REFRESH TOKEN
  * - ONLY request if there is refresh token present
@@ -28,7 +28,7 @@ export const requestNewToken = async () => {
       // 4. Save received token to keyring
       setSecureValue('token', acToken);
       // 5. Save received token to redux store
-      store.dispatch(updateToken({token: acToken}));
+      store.dispatch(updateToken({ token: acToken }));
     })
     .catch(err => console.log('requestNewToken()', err));
 };

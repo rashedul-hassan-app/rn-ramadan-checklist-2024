@@ -1,16 +1,16 @@
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
-import {useTheme} from '../theme/useTheme';
-import {spacing} from '../theme/theme';
-import {CardPropsType} from '../types/components';
+import { StyleSheet, View } from 'react-native';
+import { useTheme } from '../theme/useTheme';
+import { spacing } from '../theme/theme';
+import { CardPropsType } from '../types/components';
 
-const Card = ({children, style}: CardPropsType) => {
-  const {theme} = useTheme();
+const Card = ({ children, style }: CardPropsType) => {
+  const { theme } = useTheme();
   return (
     <View
       style={[
         styles.card,
-        {backgroundColor: theme.cardBg, borderColor: theme.cardBorderColor},
+        { backgroundColor: theme.cardBg, borderColor: theme.cardBorderColor },
         style,
       ]}>
       {children}
